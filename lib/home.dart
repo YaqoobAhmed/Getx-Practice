@@ -54,12 +54,21 @@ class HomePage extends StatelessWidget {
                       children: [
                         ListTile(
                           leading: Icon(Icons.light_mode),
-                          title: Text("Lisght Theme"),
-                          onTap: () {},
+                          title: Text("Light Theme"),
+                          onTap: () {
+                            print("light");
+                            Get.changeTheme(ThemeData.light());
+                          },
                         ),
-                        ListTile(
-                          leading: Icon(Icons.dark_mode),
-                          title: Text("Dark Theme"),
+                        GestureDetector(
+                          child: ListTile(
+                            leading: Icon(Icons.dark_mode),
+                            title: Text("Dark Theme"),
+                            onTap: () {
+                              print("dark");
+                              Get.changeTheme(ThemeData.dark());
+                            },
+                          ),
                         )
                       ],
                     ),
